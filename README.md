@@ -1,5 +1,5 @@
 # so2-concurrency-problems
-Repositorio creado por: Miguel Anibal (), Jefferson Hidalgo () y Charlie Delgado (2021-1092)
+Repositorio creado por: Miguel Anibal (), Jefferson Hidalgo (2021-1203) y Charlie Delgado (2021-1092)
 
 Clase de Sistemas operativos II P2 2023.
 
