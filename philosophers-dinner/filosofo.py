@@ -20,15 +20,15 @@ def agarrartenedores(id_filosofo):
     """Trata de tomar los tenedores izquierdo y derecho (en ese orden) y 
        devuelve True si ha podido adquirir ambos y False de lo contrario"""
 
-    palillo_izq = candados[id_filosofo]
-    palillo_der = candados[(id_filosofo - 1) % CANTIDAD_FILOSOFOS]
+    tenedor_izq = candados[id_filosofo]
+    tenedor_der = candados[(id_filosofo - 1) % CANTIDAD_FILOSOFOS]
 
-    palillo_izq.acquire()
+    tenedor_izq.acquire()
 
-    if palillo_der.acquire(blocking=False):
+    if tenedor_der.acquire(blocking=False):
         return True
     else:
-        palillo_izq.release()
+        tenedor_izq.release()
         return False
 
 
