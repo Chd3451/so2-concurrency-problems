@@ -42,3 +42,13 @@ En el ejemplo anterior, se importa la biblioteca "threading" y se define una fun
 Además de crear hilos simples, la biblioteca "threading" también proporciona funciones para trabajar con múltiples hilos al mismo tiempo. Por ejemplo, puede usar la función "enumerate()" para obtener una lista de todos los hilos activos en un momento dado, o la función "join()" para esperar hasta que un hilo específico haya finalizado su ejecución.
 
 Es importante tener en cuenta que, aunque los hilos en Python pueden ser útiles para mejorar el rendimiento y la capacidad de respuesta de un programa, también pueden presentar desafíos de sincronización y problemas de concurrencia. Por lo tanto, es importante tener en cuenta estos factores al implementar hilos en Python y utilizar estrategias adecuadas para evitar problemas de seguridad y de rendimiento en el programa.
+
+
+##Deadlock;
+Se refiere a una situación en la que dos o más procesos están esperando indefinidamente por recursos que no pueden liberar porque están siendo retenidos por otros procesos. En otras palabras, cada proceso está esperando que el otro proceso libere los recursos que necesita para continuar. Como resultado, los procesos quedan atrapados en un estado de espera infinito y no pueden avanzar.
+
+##Exclusión Mutual;
+Se refiere a una técnica utilizada en programación concurrente para garantizar que dos o más procesos no puedan acceder al mismo recurso al mismo tiempo. Esto se logra mediante el uso de mecanismos de bloqueo, como semáforos, mutexes o monitores, que aseguran que solo un proceso pueda acceder al recurso en cualquier momento dado.
+
+##Mantenga y espere;
+Es una estrategia utilizada en sistemas operativos para resolver problemas de exclusión mutua y evitar la posibilidad de deadlock. En esta estrategia, un proceso que solicita un recurso lo retiene mientras espera que se le otorgue el recurso solicitado. Esto significa que si otro proceso solicita el mismo recurso, deberá esperar hasta que el primer proceso lo libere. Esto evita la posibilidad de deadlock pero puede dar lugar a una utilización ineficiente de los recursos.
