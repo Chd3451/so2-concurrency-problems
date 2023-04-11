@@ -1,5 +1,62 @@
 # Documentación del nuesta solución al problema de la cena de los filósofos.
 
+Cinco filósofos se sientan alrededor de una mesa redonda y hay un tenedor entre cada dos filósofos. Los filósofos pasan su tiempo comiendo y pensando. Para comer, necesitan dos tenedores adyacentes, uno a su izquierda y otro a su derecha. Cuando terminan de comer, dejan los tenedores y continúan pensando. Si todos los filósofos intentan comer al mismo tiempo, es posible que se produzca una situación de competencia por los recursos (tenedores) y que se produzca un deadlock.
+
+El programa crea un hilo para cada filósofo y define dos funciones: agarrartenedores() y liberartenedores(). La primera función trata de tomar los tenedores izquierdo y derecho (en ese orden) y devuelve True si ha podido adquirir ambos y False de lo contrario. La segunda función libera los tenedores adyacentes al filósofo.
+
+La función iniciarSimulacion() es la que va a ejecutar cada filósofo (hilo). Esta función contiene un ciclo while que se ejecuta mientras el tiempo que el filósofo ha estado comiendo es menor que el tiempo total que requiere para estar satisfecho. En cada iteración, el filósofo trata de tomar los tenedores y, si lo consigue, come durante un tiempo aleatorio entre 0 y la ráfaga de comer (un valor que se pasa como argumento al programa). Si no puede tomar los tenedores, espera un tiempo aleatorio antes de intentar de nuevo. Si no puede tomar los tenedores durante un número máximo de intentos (un valor que se pasa como argumento al programa), se considera que el filósofo ha muerto por inanición y se termina su ejecución.
+
+```python
+import threading
+
+def agarrartenedores(id_filosofo):
+    # Trata de tomar los tenedores izquierdo y derecho
+    # y devuelve True si ha podido adquirir ambos y False de lo contrario
+
+def liberartenedores(id_filosofo):
+    # Libera los tenedores adyacentes al filósofo
+
+def iniciarSimulacion(id_filosofo, tiempo_comer, tiempo_satisfecho, num_intentos):
+    while tiempo_comiendo < tiempo_satisfecho:
+        # Trata de tomar los tenedores y, si lo consigue, come durante un tiempo aleatorio
+        # Si no puede tomar los tenedores, espera un tiempo aleatorio antes de intentar de nuevo
+        # Si no puede tomar los tenedores durante un número máximo de intentos, se termina su ejecución
+
+for i in range(num_filosofos):
+    threading.Thread(target=iniciarSimulacion, args=(i, tiempo_comer, tiempo_satisfecho, num_intentos)).start()
+
+```
+El programa utiliza la librería argparse para leer los argumentos pasados por la línea de comandos. Los argumentos son el número de filósofos, la ráfaga de comer de los filósofos, el tiempo total que requiere comer un filósofo para estar satisfecho y la cantidad de intentos antes de que el filósofo muera de inanición. También se establece el estado inicial de cada filósofo como "F" (filosofando).
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("num_filosofos", type=int, help="Número de filósofos en la mesa")
+parser.add_argument("tiempo_comer", type=int, help="Ráfaga de comer de los filósofos")
+parser.add_argument("tiempo_satisfecho", type=int, help="Tiempo total que requiere comer un filósofo para estar satisfecho")
+parser.add_argument("num_intentos", type=int, help="Cantidad de intentos antes de que el filósofo muera de inanición")
+args = parser.parse_args()
+
+```
+
+En la función principal se crean los hilos y se inicia su ejecución. Después, se espera a que terminen todos los hilos.
+
+```python
+hilos = []
+
+for i in range(args.num_filosofos):
+    hilo = threading.Thread(target=iniciarSimulacion, args=(i, args.tiempo_comer, args.tiempo_satisfecho, args.num_intentos))
+    hilos.append(hilo)
+    hilo.start()
+
+for hilo in hilos:
+    hilo.join()
+
+```
+
+*Aclaración: Los trozos de código están descritos de manera resumida, por esto pueden llegar a verse diferentes al programa completo.*
+
 # Investigación:
 
 ## Concurrencia:
