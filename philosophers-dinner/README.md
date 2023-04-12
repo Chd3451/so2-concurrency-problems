@@ -1,5 +1,3 @@
-#Video de la explicacion;
-https://youtu.be/jVyt9GLr3AI
 
 # Documentación del nuesta solución al problema de la cena de los filósofos.
 
@@ -60,6 +58,9 @@ for hilo in hilos:
 
 *Aclaración: Los trozos de código están descritos de manera resumida, por esto pueden llegar a verse diferentes al programa completo.*
 
+## Video de la explicacion:
+https://youtu.be/jVyt9GLr3AI
+
 # Investigación:
 
 ## Concurrencia:
@@ -104,21 +105,21 @@ Además de crear hilos simples, la biblioteca "threading" también proporciona f
 Es importante tener en cuenta que, aunque los hilos en Python pueden ser útiles para mejorar el rendimiento y la capacidad de respuesta de un programa, también pueden presentar desafíos de sincronización y problemas de concurrencia. Por lo tanto, es importante tener en cuenta estos factores al implementar hilos en Python y utilizar estrategias adecuadas para evitar problemas de seguridad y de rendimiento en el programa.
 
 
-## Deadlock;
+## Deadlock:
 Se refiere a una situación en la que dos o más procesos están esperando indefinidamente por recursos que no pueden liberar porque están siendo retenidos por otros procesos. En otras palabras, cada proceso está esperando que el otro proceso libere los recursos que necesita para continuar. Como resultado, los procesos quedan atrapados en un estado de espera infinito y no pueden avanzar.
 
-## Exclusión Mutual;
+## Exclusión Mutual:
 Se refiere a una técnica utilizada en programación concurrente para garantizar que dos o más procesos no puedan acceder al mismo recurso al mismo tiempo. Esto se logra mediante el uso de mecanismos de bloqueo, como semáforos, mutexes o monitores, que aseguran que solo un proceso pueda acceder al recurso en cualquier momento dado.
 
-## Mantenga y espere;
+## Mantenga y espere:
 Es una estrategia utilizada en sistemas operativos para resolver problemas de exclusión mutua y evitar la posibilidad de deadlock. En esta estrategia, un proceso que solicita un recurso lo retiene mientras espera que se le otorgue el recurso solicitado. Esto significa que si otro proceso solicita el mismo recurso, deberá esperar hasta que el primer proceso lo libere. Esto evita la posibilidad de deadlock pero puede dar lugar a una utilización ineficiente de los recursos.
 
-## No preventivo;
+## No preventivo:
 El término "preventivo" en programación se refiere a la práctica de tomar medidas para evitar problemas antes de que ocurran. En este sentido, es importante tener en cuenta que la programación es una disciplina que requiere una planificación cuidadosa y una atención constante a los detalles para garantizar un código limpio y funcional. Por lo tanto, no implementar medidas preventivas en la programación podría tener como resultado la aparición de errores y problemas técnicos en el futuro. Es decir, se puede terminar gastando más tiempo y recursos tratando de resolver problemas que podrían haberse evitado si se hubieran tomado medidas preventivas adecuadas en primer lugar. Algunas de las medidas preventivas que se pueden tomar en la programación son: Realizar pruebas unitarias para asegurarse de que cada componente del software funciona correctamente. Implementar controles de calidad de código para garantizar que el código cumpla con los estándares y las mejores prácticas de la industria. Mantener una documentación detallada del código para facilitar su comprensión y el mantenimiento posterior. Utilizar herramientas automatizadas para detectar y corregir errores en el código antes de que se conviertan en problemas mayores.
 
-## Esperar circular;
+## Esperar circular:
 El término "esperar circular" en programación se refiere a una práctica que consiste en pausar la ejecución de un programa hasta que un evento específico ocurra, generalmente la llegada de ciertos datos o la respuesta de un usuario. Aunque esperar circular puede ser útil en algunos casos, como cuando se espera una entrada de usuario, no es una buena práctica general para la programación. La razón es que detener la ejecución de un programa puede ser ineficiente y puede hacer que el programa se sienta lento y no receptivo para el usuario. En lugar de esperar circular, es mejor diseñar programas que sean asincrónicos y respondan a eventos. Esto significa que el programa continúa ejecutándose mientras espera que ocurra un evento, y en lugar de bloquear la ejecución del programa, se activa una respuesta cuando el evento ocurre. Por ejemplo, en lugar de esperar circular para que lleguen los datos de un servidor, un programa asincrónico enviaría una solicitud de datos al servidor y luego continuaría ejecutándose mientras espera que lleguen los datos. Cuando los datos llegan, se activa una respuesta y se procesan los datos.
 
-## Como manejar el interbloque en sistemas operativos - compara con problema de los filosofos;
+## Como manejar el interbloque en sistemas operativos - compara con problema de los filosofos:
 
 El problema de los filósofos se convierte en un problema de interbloque cuando cada filósofo intenta tomar los dos tenedores al mismo tiempo. Si todos los filósofos intentan tomar su tenedor izquierdo al mismo tiempo, entonces nadie puede tomar su tenedor derecho, lo que lleva a un interbloqueo. En sistemas operativos, el interbloqueo ocurre cuando dos o más procesos están bloqueados en una espera circular de recursos que cada uno de ellos necesita para continuar. Esto puede ser causado por una variedad de factores, incluyendo una mala planificación del proceso, una asignación incorrecta de recursos, o una falta de comunicación entre los procesos. Para manejar el interbloque en sistemas operativos, se utilizan diferentes técnicas de prevención y recuperación. Algunas técnicas de prevención incluyen la asignación cuidadosa de recursos, la planificación adecuada del proceso y la coordinación de los procesos para evitar la espera circular. Por otro lado, algunas técnicas de recuperación incluyen la detección y la resolución del interbloqueo mediante la liberación de recursos, la interrupción de los procesos o la reorganización de la planificación del proceso.
