@@ -1,3 +1,6 @@
+#Video de la explicacion;
+https://youtu.be/jVyt9GLr3AI
+
 # Documentación del nuesta solución al problema de la cena de los filósofos.
 
 Cinco filósofos se sientan alrededor de una mesa redonda y hay un tenedor entre cada dos filósofos. Los filósofos pasan su tiempo comiendo y pensando. Para comer, necesitan dos tenedores adyacentes, uno a su izquierda y otro a su derecha. Cuando terminan de comer, dejan los tenedores y continúan pensando. Si todos los filósofos intentan comer al mismo tiempo, es posible que se produzca una situación de competencia por los recursos (tenedores) y que se produzca un deadlock.
